@@ -1,0 +1,10 @@
+pandoc: '2.2'
+pkgdown: 1.4.1
+pkgdown_sha: ~
+articles:
+  MOAS: MOAS.html
+  PGS_functions: PGS_functions.html
+  epigenetics: epigenetics.html
+  find-subject-timepoint: find-subject-timepoint.html
+  make_documentation: make_documentation.html
+
