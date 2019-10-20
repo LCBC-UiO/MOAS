@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Select away sensitive columns — select_sensitive • MOAS</title>
+<title>Select sensitive columns — select_sensitive • MOAS</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -42,9 +42,9 @@
 
 
 
-<meta property="og:title" content="Select away sensitive columns — select_sensitive" />
-<meta property="og:description" content="This function will remove all the columns from
-a MOAS-like data.frame that is known to include
+<meta property="og:title" content="Select sensitive columns — select_sensitive" />
+<meta property="og:description" content="This function will select all the columns from
+a MOAS-like data.frame that are known to include
 possible sensitive information." />
 <meta property="og:image" content="/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -142,18 +142,18 @@ possible sensitive information." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Select away sensitive columns</h1>
+    <h1>Select sensitive columns</h1>
     <small class="dont-index">Source: <a href='https://github.com/LCBC-UiO/MOAS/blob/master/R/anonymize.R'><code>R/anonymize.R</code></a></small>
     <div class="hidden name"><code>select_sensitive.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This function will remove all the columns from
-a MOAS-like data.frame that is known to include
+    <p>This function will select all the columns from
+a MOAS-like data.frame that are known to include
 possible sensitive information.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>select_sensitive</span>(<span class='no'>data</span>, <span class='kw'>remove</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>select_sensitive</span>(<span class='no'>data</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -162,23 +162,29 @@ possible sensitive information.</p>
       <th>data</th>
       <td><p>The MOAS or a MOAS generated file.</p></td>
     </tr>
-    <tr>
-      <th>remove</th>
-      <td><p>logical, to remove (default) sensitive columns,
-or select them</p></td>
-    </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>tibble</p>
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='no'>dt</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(<span class='kw'>ID</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>3</span>,
+    <span class='kw'>Birth_Date</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"1997-01-12"</span>, <span class='st'>"1984-01-01"</span>, <span class='st'>"1953-09-16"</span>),
+   <span class='kw'>Comment</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>""</span>, <span class='st'>"Has leukemia"</span>, <span class='st'>"is on diazepam"</span>),
+   <span class='kw'>CVLT_A</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>19</span>, <span class='fl'>25</span>, <span class='fl'>29</span>),
+   <span class='kw'>stringsAsFactors</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
+<span class='fu'>select_sensitive</span>(<span class='no'>dt</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown columns: `CrossProject_ID`, `Site_BIDS`, `Folder`, `Project_Wave_ID`</span></div><div class='output co'>#&gt;          Comment Birth_Date
+#&gt; 1                1997-01-12
+#&gt; 2   Has leukemia 1984-01-01
+#&gt; 3 is on diazepam 1953-09-16</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
+      <li><a href="#examples">Examples</a></li>
     </ul>
 
   </div>

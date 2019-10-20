@@ -43,7 +43,7 @@
 
 
 <meta property="og:title" content="Utility function for reducing double/triple scans to a single row — filter_site" />
-<meta property="og:description" content="filter_site returns a MOAS data.frame with one row per
+<meta property="og:description" content="returns a MOAS data.frame with one row per
 participant and timepoint (i.e. removes double/triple scan entries).
 For analyses not intending to use the power of double/triple scans,
 or for data which will be widened and scanner type/site is not of
@@ -152,7 +152,7 @@ will be reduced. All timepoints will be retained." />
     </div>
 
     <div class="ref-description">
-    <p><code>filter_site</code> returns a MOAS data.frame with one row per
+    <p>returns a MOAS data.frame with one row per
 participant and timepoint (i.e. removes double/triple scan entries).
 For analyses not intending to use the power of double/triple scans,
 or for data which will be widened and scanner type/site is not of
@@ -173,21 +173,11 @@ will be reduced. All timepoints will be retained.</p>
     </tr>
     <tr>
       <th>keep</th>
-      <td><p>A string specifying which data from double/triple scans to keep.
-Available options are:
-'long' - keep data from scanner with most data (default),
-'ousAvanto' = keep 'ousAvanto',
-'ousSkyra' = keep 'ousSkyra', or
-'ousPrisma' = keep 'ousPrisma'.</p></td>
+      <td><p>A string specifying which data from double/triple scans to keep.</p></td>
     </tr>
     <tr>
       <th>tie</th>
-      <td><p>string indicating given a tie in the "long" keep option, what to keep.
-Available options are:
-'interval' - keep data from scanner with longest data interval (default),
-'ousAvanto' = keep 'ousAvanto',
-'ousSkyra' = keep 'ousSkyra', or
-'ousPrisma' = keep 'ousPrisma'.</p></td>
+      <td><p>string indicating given a tie in the "long" keep option, what to keep.</p></td>
     </tr>
     <tr>
       <th>site_order</th>
@@ -202,6 +192,22 @@ Available options are:
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A MOAS type file with one line per subject and timepoint.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>Available options for 'keep' are:</p><ul>
+<li><p>"long"keep data from scanner with most data (default)</p></li>
+<li><p>"ousAvanto"keep 'ousAvanto'</p></li>
+<li><p>"ousSkyra"keep 'ousSkyra'</p></li>
+<li><p>"ousPrisma"'ousPrisma'</p></li>
+</ul>
+
+<p>Available options for 'tie' are:</p><ul>
+<li><p>"interval"keep data from scanner with longest data interval (default)</p></li>
+<li><p>"ousAvanto"keep 'ousAvanto'</p></li>
+<li><p>"ousSkyra"keep 'ousSkyra'</p></li>
+<li><p>"ousPrisma"'ousPrisma'</p></li>
+</ul>
+
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
@@ -215,6 +221,7 @@ Available options are:
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
+      <li><a href="#details">Details</a></li>
       <li><a href="#examples">Examples</a></li>
     </ul>
 

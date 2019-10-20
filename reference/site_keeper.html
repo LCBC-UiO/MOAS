@@ -43,7 +43,7 @@
 
 
 <meta property="og:title" content="Deprecated, use filter_site — site_keeper" />
-<meta property="og:description" content="site_keeper returns a MOAS data.frame with one row per
+<meta property="og:description" content="returns a MOAS data.frame with one row per
 participant and timepoint (i.e. removes double/triple scan entries).
 For analyses not intending to use the power of double/triple scans,
 or for data which will be widened and scanner type/site is not of
@@ -147,12 +147,12 @@ will be reduced. All timepoints will be retained." />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Deprecated, use filter_site</h1>
-    <small class="dont-index">Source: <a href='https://github.com/LCBC-UiO/MOAS/blob/master/R/filters.R'><code>R/filters.R</code></a>, <a href='https://github.com/LCBC-UiO/MOAS/blob/master/R/site_keeper.R'><code>R/site_keeper.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/LCBC-UiO/MOAS/blob/master/R/filters.R'><code>R/filters.R</code></a></small>
     <div class="hidden name"><code>site_keeper.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p><code>site_keeper</code> returns a MOAS data.frame with one row per
+    <p>returns a MOAS data.frame with one row per
 participant and timepoint (i.e. removes double/triple scan entries).
 For analyses not intending to use the power of double/triple scans,
 or for data which will be widened and scanner type/site is not of
@@ -161,45 +161,11 @@ Only subject timepoints that have several entries (i.e. several scan sites),
 will be reduced. All timepoints will be retained.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>site_keeper</span>(<span class='no'>data</span>, <span class='kw'>keep</span> <span class='kw'>=</span> <span class='st'>"long"</span>, <span class='kw'>tie</span> <span class='kw'>=</span> <span class='st'>"interval"</span>,
-  <span class='kw'>site_order</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"ousPrisma"</span>, <span class='st'>"ousSkyra"</span>, <span class='st'>"ousAvanto"</span>), <span class='kw'>quiet</span> <span class='kw'>=</span> <span class='no'>F</span>)
-
-<span class='fu'>site_keeper</span>(<span class='no'>data</span>, <span class='kw'>keep</span> <span class='kw'>=</span> <span class='st'>"long"</span>, <span class='kw'>tie</span> <span class='kw'>=</span> <span class='st'>"interval"</span>,
-  <span class='kw'>site_order</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"ousPrisma"</span>, <span class='st'>"ousSkyra"</span>, <span class='st'>"ousAvanto"</span>), <span class='kw'>quiet</span> <span class='kw'>=</span> <span class='no'>F</span>)</pre>
+    <pre class="usage"><span class='fu'>site_keeper</span>(<span class='no'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>data</th>
-      <td><p>The MOAS or a MOAS generated file.</p></td>
-    </tr>
-    <tr>
-      <th>keep</th>
-      <td><p>A string specifying which data from double/triple scans to keep.
-Available options are:
-'long' - keep data from scanner with most data (default),
-'ousAvanto' = keep 'ousAvanto',
-'ousSkyra' = keep 'ousSkyra', or
-'ousPrisma' = keep 'ousPrisma'.</p></td>
-    </tr>
-    <tr>
-      <th>tie</th>
-      <td><p>string indicating given a tie in the "long" keep option, what to keep.
-Available options are:
-'interval' - keep data from scanner with longest data interval (default),
-'ousAvanto' = keep 'ousAvanto',
-'ousSkyra' = keep 'ousSkyra', or
-'ousPrisma' = keep 'ousPrisma'.</p></td>
-    </tr>
-    <tr>
-      <th>site_order</th>
-      <td><p>string vector of the scanner priority given a tie between scanners</p></td>
-    </tr>
-    <tr>
-      <th>quiet</th>
-      <td><p>logical, TRUE sets it to verbose</p></td>
-    </tr>
     <tr>
       <th>...</th>
       <td><p>any argument to filter_site</p></td>
@@ -209,12 +175,28 @@ Available options are:
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A MOAS type file with one line per subject and timepoint.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>Available options for 'keep' are:</p><ul>
+<li><p>"long"keep data from scanner with most data (default)</p></li>
+<li><p>"ousAvanto"keep 'ousAvanto'</p></li>
+<li><p>"ousSkyra"keep 'ousSkyra'</p></li>
+<li><p>"ousPrisma"'ousPrisma'</p></li>
+</ul>
+
+<p>Available options for 'tie' are:</p><ul>
+<li><p>"interval"keep data from scanner with longest data interval (default)</p></li>
+<li><p>"ousAvanto"keep 'ousAvanto'</p></li>
+<li><p>"ousSkyra"keep 'ousSkyra'</p></li>
+<li><p>"ousPrisma"'ousPrisma'</p></li>
+</ul>
+
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='fu'>site_keeper</span>(<span class='no'>MOAS</span>)
-<span class='fu'>site_keeper</span>(<span class='no'>MOAS</span>, <span class='st'>'ousSkyra'</span>)
-<span class='fu'>site_keeper</span>(<span class='no'>MOAS</span>, <span class='st'>'ousAvanto'</span>)
+<span class='fu'><a href='filter_site.html'>filter_site</a></span>(<span class='no'>MOAS</span>)
+<span class='fu'><a href='filter_site.html'>filter_site</a></span>(<span class='no'>MOAS</span>, <span class='st'>'ousSkyra'</span>)
+<span class='fu'><a href='filter_site.html'>filter_site</a></span>(<span class='no'>MOAS</span>, <span class='st'>'ousAvanto'</span>)
 }</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -222,6 +204,7 @@ Available options are:
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
+      <li><a href="#details">Details</a></li>
       <li><a href="#examples">Examples</a></li>
     </ul>
 

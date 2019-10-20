@@ -158,8 +158,9 @@ provide for a check.</p>
     </div>
 
     <pre class="usage"><span class='fu'>pgs_get</span>(<span class='kw'>pgs</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"AD"</span>, <span class='st'>"AD_Jansen"</span>), <span class='kw'>s_levels</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"S1"</span>, <span class='st'>"S7"</span>, <span class='st'>"S11"</span>),
-  <span class='kw'>pgs_path</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>genetic_match_file</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>include_cnt</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>include_pheno</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>include_genetic_debug</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+  <span class='kw'>pgs_path</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/character.html'>character</a></span>(), <span class='kw'>genetic_match_file</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/character.html'>character</a></span>(),
+  <span class='kw'>include_cnt</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>include_pheno</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>include_genetic_debug</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -202,10 +203,11 @@ in the genetic_match_file in the final output</p></td>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other pgs-functions: <code><a href='pgs_add_all.html'>pgs_add_all</a></code>,
-  <code><a href='pgs_add.html'>pgs_add</a></code>, <code><a href='pgs_get_all.html'>pgs_get_all</a></code>,
+  <code><a href='pgs_add_single.html'>pgs_add_single</a></code>, <code><a href='pgs_add.html'>pgs_add</a></code>,
+  <code><a href='pgs_get_all.html'>pgs_get_all</a></code>, <code><a href='pgs_get_single.html'>pgs_get_single</a></code>,
   <code><a href='pgs_read.html'>pgs_read</a></code></p>
 <p>Other MOAS get-functions: <code><a href='dbs_get.html'>dbs_get</a></code>,
-  <code><a href='epigen_get.html'>epigen_get</a></code></p></div>
+  <code><a href='epigen_get.html'>epigen_get</a></code>, <code><a href='pgs_get_single.html'>pgs_get_single</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
@@ -214,18 +216,18 @@ in the genetic_match_file in the final output</p></td>
 <span class='co'># lagringshotell, you can substitute "~" in the</span>
 <span class='co'># paths with the path to the lagringshotell</span>
 
-<span class='fu'>pgs_get</span>( <span class='kw'>pgs</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"AD"</span>, <span class='st'>"EduYears_2016"</span>, <span class='st'>"Depression_Nagel2018"</span>),
+<span class='fu'>pgs_get</span>( <span class='kw'>pgs</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/character.html'>character</a></span>(),
          <span class='kw'>s_levels</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"S1"</span>, <span class='st'>"S7"</span>, <span class='st'>"S11"</span>),
-         <span class='kw'>pgs_path</span> <span class='kw'>=</span> <span class='st'>"~/LCBC/Projects/Cross_projects/Genetics/PGS/PGS_20190618/PGS_wAPOE/"</span>,
-         <span class='kw'>genetic_match_file</span> <span class='kw'>=</span> <span class='st'>"~/LCBC/Projects/Cross_projects/MOAS/data-raw/DNA/gID_MOAS_match.tsv"</span>,
+         <span class='kw'>pgs_path</span> <span class='kw'>=</span> <span class='st'>"path/to/Genetics/PGS/PGS_20190618/PGS_wAPOE/"</span>,
+         <span class='kw'>genetic_match_file</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/character.html'>character</a></span>(),
 )
 
 <span class='co'># You can also toggle adding the CNT columns from the PGS, by changing</span>
 <span class='co'># include_cnt to TRUE</span>
-<span class='fu'>pgs_get</span>( <span class='kw'>pgs</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"AD"</span>, <span class='st'>"EduYears_2016"</span>, <span class='st'>"Depression_Nagel2018"</span>),
+<span class='fu'>pgs_get</span>( <span class='kw'>pgs</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/character.html'>character</a></span>(),
          <span class='kw'>s_levels</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"S1"</span>, <span class='st'>"S7"</span>, <span class='st'>"S11"</span>),
-         <span class='kw'>pgs_path</span> <span class='kw'>=</span> <span class='st'>"~/LCBC/Projects/Cross_projects/Genetics/PGS/PGS_20190618/PGS_wAPOE/"</span>,
-         <span class='kw'>genetic_match_file</span> <span class='kw'>=</span> <span class='st'>"~/LCBC/Projects/Cross_projects/MOAS/data-raw/DNA/gID_MOAS_match.tsv"</span>,
+         <span class='kw'>pgs_path</span> <span class='kw'>=</span> <span class='st'>"path/to/Genetics/PGS/PGS_20190618/PGS_wAPOE/"</span>,
+         <span class='kw'>genetic_match_file</span> <span class='kw'>=</span> <span class='st'>"path/to/MOAS/data-raw/DNA/gID_MOAS_match.tsv"</span>,
          <span class='kw'>include_cnt</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>
 )
 
