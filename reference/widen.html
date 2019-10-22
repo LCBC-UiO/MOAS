@@ -43,7 +43,10 @@
 
 
 <meta property="og:title" content="Widen the MOAS data.frame — widen" />
-<meta property="og:description" content="widen returns a widened data.frame by the columns specified" />
+<meta property="og:description" content="This is a function to create a widened data.frame from the MOAS.
+Widening of the data is necessary for performing ANOVAs and
+other statistical analysis, particularly if intending to run
+in SPSS." />
 <meta property="og:image" content="/logo.png" />
 <meta name="twitter:card" content="summary" />
 
@@ -146,7 +149,10 @@
     </div>
 
     <div class="ref-description">
-    <p><code>widen</code> returns a widened data.frame by the columns specified</p>
+    <p>This is a function to create a widened data.frame from the MOAS.
+Widening of the data is necessary for performing ANOVAs and
+other statistical analysis, particularly if intending to run
+in SPSS.</p>
     </div>
 
     <pre class="usage"><span class='fu'>widen</span>(<span class='no'>data</span>, <span class='no'>by</span>, <span class='kw'>keep</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
@@ -160,32 +166,38 @@
     </tr>
     <tr>
       <th>by</th>
-      <td><p>Column which to widen by. Options are: "Subject_Timepoint","Project_Wave","Site_Name", or "Site_Number".</p></td>
+      <td><p>Column which to widen by</p></td>
     </tr>
     <tr>
       <th>keep</th>
-      <td><p>Option to provide to [site_keeper()] for filtering the double/triple scanned</p></td>
+      <td><p>Option to provide to [site_keeper()] for
+filtering the double/triple scanned</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A MOAS type file widened by selected column, prefixed with columns specifications</p>
+    <p>A MOAS type file widened by selected column,
+prefixed with columns specifications</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>This is a function to create a widened data.frame from the MOAS.
-Widening of the data is necessary for performing ANOVAs and
-other statistical analysis, particularly if intending to run
-in SPSS.</p>
-<p>For MOAS which inclused double/triple scans, by="Site_Name",
+    <p>For MOAS which inclused double/triple scans, by="Site_Name",
 must be run prior to by="Project_Wave".</p>
+<p>'by' options are:</p><ul>
+<li><p>Subject_Timepoint</p></li>
+<li><p>Project_Wave</p></li>
+<li><p>Site_Name</p></li>
+<li><p>Site_Number</p></li>
+</ul>
+
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
 <span class='fu'>widen</span>(<span class='no'>MOAS</span>, <span class='kw'>by</span><span class='kw'>=</span><span class='st'>"Site_Name"</span>)
 <span class='fu'>widen</span>(<span class='no'>MOAS</span>, <span class='kw'>by</span><span class='kw'>=</span><span class='st'>"Project_Wave"</span>)
 
-<span class='co'># Data with double/triple scans must be widened in a two-stage process</span>
+<span class='co'># Data with double/triple scans must be widened</span>
+<span class='co'># in a two-stage process</span>
 <span class='no'>dt</span> <span class='kw'>=</span> <span class='fu'>widen</span>(<span class='no'>MOAS</span>, <span class='kw'>by</span><span class='kw'>=</span><span class='st'>"Site_Name"</span>)
 <span class='no'>df</span> <span class='kw'>=</span> <span class='fu'>widen</span>(<span class='no'>dt</span>, <span class='kw'>by</span><span class='kw'>=</span><span class='st'>"Project_Wave"</span>)
 }</div></pre>

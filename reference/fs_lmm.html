@@ -180,13 +180,8 @@ scalar co-variates.</p></td>
     </tr>
     <tr>
       <th>missing.action</th>
-      <td><p>Action to take on missing data for the
-numeric.vars. Options are:
-'delete' - deletes observations with any missing numeric.vars,
-'mean' - replaces missing with mean for that participant,
-'all' - replaces all values with the mean for that participant,
-'first' - replaced all values with the first observation for that
-participant.</p></td>
+      <td><p>Action to take on missing data i the
+numeric.var</p></td>
     </tr>
     <tr>
       <th>keep</th>
@@ -202,6 +197,16 @@ option calls <code>site_keeper</code>.</p></td>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>a data frame ready for Freesurfer LMM use.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>Available options for 'missing.action' are:</p><ul>
+<li><p>"delete"delete observations with any missing numeric.vars</p></li>
+<li><p>"mean"replace missing with mean for that participant</p></li>
+<li><p>"all"replace all values with the mean for that participant</p></li>
+<li><p>"first"replace all values with the first
+ observation for that participant</p></li>
+</ul>
+
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
@@ -215,6 +220,7 @@ option calls <code>site_keeper</code>.</p></td>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
+      <li><a href="#details">Details</a></li>
       <li><a href="#examples">Examples</a></li>
     </ul>
 

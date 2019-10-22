@@ -175,7 +175,12 @@
 <a class="sourceLine" id="cb7-4" data-line-number="4">  <span class="dt">pgs_path =</span> <span class="st">"path/to/Genetics/PGS/PGS_20190618/PGS_wAPOE/"</span>,</a>
 <a class="sourceLine" id="cb7-5" data-line-number="5">  <span class="dt">genetic_match_file =</span> <span class="st">"path/to/MOAS/data-raw/DNA/gID_MOAS_match.tsv"</span></a>
 <a class="sourceLine" id="cb7-6" data-line-number="6">)</a></code></pre></div>
-<p>##S The <code>_single</code> functions There is a new function pair, that will allow you to add/get a single PGS from its <code>.profile</code>. This should enable you to grab and safely merge new PGS data as they come in, and not have to wait for assistance before you can start working with the data.</p>
+</div>
+</div>
+<div id="the-_single-functions" class="section level2">
+<h2 class="hasAnchor">
+<a href="#the-_single-functions" class="anchor"></a>The <code>_single</code> functions</h2>
+<p>There is a new function pair, that will allow you to add/get a single PGS from its <code>.profile</code>. This should enable you to grab and safely merge new PGS data as they come in, and not have to wait for assistance before you can start working with the data.</p>
 <p>As the other functions, they come in both <code>get</code> and <code>add</code> variety. You’ll need to specify the entire path, all the way to the <code>.profile</code> file you want to add. This means the folder structure etc. for using this function is not very strict, as the other functions. The name used in the PGS file will be the file name up untill <code>.profile</code>.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw"><a href="../reference/pgs_get_single.html">pgs_get_single</a></span>(</a>
 <a class="sourceLine" id="cb8-2" data-line-number="2">  <span class="dt">pgs_file =</span> <span class="st">"path/to/Genetics/PGS/PGS_XX/PGS_XX.profile"</span>,</a>
@@ -197,7 +202,6 @@
 <a class="sourceLine" id="cb10-7" data-line-number="7">    <span class="dt">pgs_file =</span> <span class="st">"path/to/Genetics/PGS/PGS_YY/PGS_YY.profile"</span>,</a>
 <a class="sourceLine" id="cb10-8" data-line-number="8">    <span class="dt">genetic_match_file =</span> <span class="st">"path/to/MOAS/data-raw/DNA/gID_MOAS_match.tsv"</span></a>
 <a class="sourceLine" id="cb10-9" data-line-number="9">  )</a></code></pre></div>
-</div>
 </div>
 <div id="extra-options-to-all-functions" class="section level2">
 <h2 class="hasAnchor">
@@ -231,6 +235,7 @@
 <a href="#tocnav" class="anchor"></a>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
 <li><a href="#the-two-main-functions">The two main functions</a></li>
+      <li><a href="#the-_single-functions">The <code>_single</code> functions</a></li>
       <li><a href="#extra-options-to-all-functions">Extra options to all functions</a></li>
       </ul>
 </div>
