@@ -6,7 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Add PGS data to the MOAS — pgs_add • MOAS</title>
+<title>Calculate or infer the mean data for
+data collected — mutate_mean_date • MOAS</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -42,10 +43,15 @@
 
 
 
-<meta property="og:title" content="Add PGS data to the MOAS — pgs_add" />
-<meta property="og:description" content="This function calls on [pgs_get] to read in wanted
-PGS at specified significance levels, and adds that data
-to the MOAS-type data provided." />
+<meta property="og:title" content="Calculate or infer the mean data for
+data collected — mutate_mean_date" />
+<meta property="og:description" content="The data in LCBC are usually collected in
+two sets each time, one testing and one MRI.
+These two are usually seperated by some days
+to a month, but some times even more.
+We also miss some dates of testing for some
+participants. This causes some difficulties
+when calculating ages etc." />
 <meta property="og:image" content="/logo.png" />
 <meta name="twitter:card" content="summary" />
 
@@ -142,83 +148,53 @@ to the MOAS-type data provided." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Add PGS data to the MOAS</h1>
-    <small class="dont-index">Source: <a href='https://github.com/LCBC-UiO/MOAS/blob/master/R/pgs-funcs.R'><code>R/pgs-funcs.R</code></a></small>
-    <div class="hidden name"><code>pgs_add.Rd</code></div>
+    <h1>Calculate or infer the mean data for
+data collected</h1>
+    <small class="dont-index">Source: <a href='https://github.com/LCBC-UiO/MOAS/blob/master/R/mutates.R'><code>R/mutates.R</code></a></small>
+    <div class="hidden name"><code>mutate_mean_date.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This function calls on [<code>pgs_get</code>] to read in wanted
-PGS at specified significance levels, and adds that data
-to the MOAS-type data provided.</p>
+    <p>The data in LCBC are usually collected in
+two sets each time, one testing and one MRI.
+These two are usually seperated by some days
+to a month, but some times even more.
+We also miss some dates of testing for some
+participants. This causes some difficulties
+when calculating ages etc.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>pgs_add</span>(<span class='no'>MOAS</span>, <span class='kw'>pgs</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>s_levels</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"S1"</span>, <span class='st'>"S7"</span>, <span class='st'>"S11"</span>),
-  <span class='kw'>pgs_path</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>genetic_match_file</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>include_cnt</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>include_genetic_debug</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>mutate_mean_date</span>(<span class='no'>data</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>MOAS</th>
-      <td><p>data.frame of the full MOAS or MOAS sub-set</p></td>
-    </tr>
-    <tr>
-      <th>pgs</th>
-      <td><p>character vector of the PGS wanted</p></td>
-    </tr>
-    <tr>
-      <th>s_levels</th>
-      <td><p>character vector of the significance levels wanted</p></td>
-    </tr>
-    <tr>
-      <th>pgs_path</th>
-      <td><p>path to the directory where the PGS's are stored</p></td>
-    </tr>
-    <tr>
-      <th>genetic_match_file</th>
-      <td><p>path to the file containing the MOAS-genetics
-matching and debugging information</p></td>
-    </tr>
-    <tr>
-      <th>include_cnt</th>
-      <td><p>logical, whether to keep SNP count information</p></td>
-    </tr>
-    <tr>
-      <th>include_genetic_debug</th>
-      <td><p>logical, whether to keep all columns
-in the genetic_match_file in the final output</p></td>
+      <th>data</th>
+      <td><p>MOAS-like data</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>a tibble / data.frame</p>
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+    <p>data frame</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <div class='dont-index'><p>Other pgs-functions: <code><a href='pgs_add_all.html'>pgs_add_all</a></code>,
-  <code><a href='pgs_add_single.html'>pgs_add_single</a></code>, <code><a href='pgs_get_all.html'>pgs_get_all</a></code>,
-  <code><a href='pgs_get_single.html'>pgs_get_single</a></code>, <code><a href='pgs_get.html'>pgs_get</a></code>,
-  <code><a href='pgs_read.html'>pgs_read</a></code></p></div>
+    <p>This function will create a new column named code[date],
+which will contain wither the mean date between
+MRI and test, given we have dates on both, or either
+one of test or MRI date we have. If both are missing,
+the function will add in the mean date for the specific
+Project and Wave of collection, in order to properly
+order the data in most likely chronological order.</p>
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-
-<span class='fu'>pgs_add</span>(<span class='kw'>pgs</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"AD"</span>, <span class='st'>"EduYears_2016"</span>),
-    <span class='kw'>s_levels</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"S1"</span>, <span class='st'>"S7"</span>, <span class='st'>"S11"</span>),
-    <span class='kw'>pgs_path</span> <span class='kw'>=</span> <span class='st'>"path/to/PGS_wAPOE/"</span>,
-    <span class='kw'>genetic_match_file</span> <span class='kw'>=</span> <span class='st'>"path/to/gID_MOAS_match.tsv"</span>,
-)
-}</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
-      <li><a href="#see-also">See also</a></li>
-      <li><a href="#examples">Examples</a></li>
+      <li><a href="#details">Details</a></li>
     </ul>
 
   </div>
