@@ -119,6 +119,9 @@ will be reduced. All timepoints will be retained." />
       <a href="../articles/find-subject-timepoint.html">Find subject timepoint</a>
     </li>
     <li>
+      <a href="../articles/ggplot-branding.html">Branding ggplots</a>
+    </li>
+    <li>
       <a href="../articles/make_documentation.html">Make documentation pages</a>
     </li>
   </ul>
@@ -163,8 +166,13 @@ Only subject timepoints that have several entries
 will be reduced. All timepoints will be retained.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>filter_site</span>(<span class='no'>data</span>, <span class='kw'>keep</span> <span class='kw'>=</span> <span class='st'>"long"</span>, <span class='kw'>tie</span> <span class='kw'>=</span> <span class='st'>"interval"</span>,
-  <span class='kw'>site_order</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"ousPrisma"</span>, <span class='st'>"ousSkyra"</span>, <span class='st'>"ousAvanto"</span>), <span class='kw'>quiet</span> <span class='kw'>=</span> <span class='no'>F</span>)</pre>
+    <pre class="usage"><span class='fu'>filter_site</span>(
+  <span class='no'>data</span>,
+  <span class='kw'>keep</span> <span class='kw'>=</span> <span class='st'>"long"</span>,
+  <span class='kw'>tie</span> <span class='kw'>=</span> <span class='st'>"interval"</span>,
+  <span class='kw'>site_order</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"ousPrisma"</span>, <span class='st'>"ousSkyra"</span>, <span class='st'>"ousAvanto"</span>),
+  <span class='kw'>quiet</span> <span class='kw'>=</span> <span class='no'>F</span>
+)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">

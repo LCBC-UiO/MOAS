@@ -117,6 +117,9 @@ variables are z-transformed." />
       <a href="../articles/find-subject-timepoint.html">Find subject timepoint</a>
     </li>
     <li>
+      <a href="../articles/ggplot-branding.html">Branding ggplots</a>
+    </li>
+    <li>
       <a href="../articles/make_documentation.html">Make documentation pages</a>
     </li>
   </ul>
@@ -158,8 +161,14 @@ Design matrices are created for the grouping.var factors, and numeric
 variables are z-transformed.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>fs_lmm</span>(<span class='no'>data</span>, <span class='no'>grouping.var</span>, <span class='no'>numeric.var</span>, <span class='kw'>missing.action</span> <span class='kw'>=</span> <span class='st'>"mean"</span>,
-  <span class='kw'>keep</span> <span class='kw'>=</span> <span class='st'>"long"</span>, <span class='no'>file</span>)</pre>
+    <pre class="usage"><span class='fu'>fs_lmm</span>(
+  <span class='no'>data</span>,
+  <span class='no'>grouping.var</span>,
+  <span class='no'>numeric.var</span>,
+  <span class='kw'>missing.action</span> <span class='kw'>=</span> <span class='st'>"mean"</span>,
+  <span class='kw'>keep</span> <span class='kw'>=</span> <span class='st'>"long"</span>,
+  <span class='no'>file</span>
+)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">

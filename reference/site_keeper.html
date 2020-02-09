@@ -43,14 +43,7 @@
 
 
 <meta property="og:title" content="Deprecated, use filter_site — site_keeper" />
-<meta property="og:description" content="returns a MOAS data.frame with one row per
-participant and timepoint (i.e. removes double/triple scan entries).
-For analyses not intending to use the power of double/triple scans,
-or for data which will be widened and scanner type/site is not of
-interest.
-Only subject timepoints that have several entries
-(i.e. several scan sites),
-will be reduced. All timepoints will be retained." />
+<meta property="og:description" content="Deprecated, use filter_site" />
 <meta property="og:image" content="/logo.png" />
 <meta name="twitter:card" content="summary" />
 
@@ -119,6 +112,9 @@ will be reduced. All timepoints will be retained." />
       <a href="../articles/find-subject-timepoint.html">Find subject timepoint</a>
     </li>
     <li>
+      <a href="../articles/ggplot-branding.html">Branding ggplots</a>
+    </li>
+    <li>
       <a href="../articles/make_documentation.html">Make documentation pages</a>
     </li>
   </ul>
@@ -153,14 +149,7 @@ will be reduced. All timepoints will be retained." />
     </div>
 
     <div class="ref-description">
-    <p>returns a MOAS data.frame with one row per
-participant and timepoint (i.e. removes double/triple scan entries).
-For analyses not intending to use the power of double/triple scans,
-or for data which will be widened and scanner type/site is not of
-interest.
-Only subject timepoints that have several entries
-(i.e. several scan sites),
-will be reduced. All timepoints will be retained.</p>
+    <p>Deprecated, use filter_site</p>
     </div>
 
     <pre class="usage"><span class='fu'>site_keeper</span>(<span class='no'>...</span>)</pre>
@@ -170,44 +159,16 @@ will be reduced. All timepoints will be retained.</p>
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>...</th>
-      <td><p>arguments to filter_site</p></td>
+      <td><p>arguments to <code><a href='filter_site.html'>filter_site</a></code></p></td>
     </tr>
     </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A MOAS type file with one line per subject and timepoint.</p>
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>Available options for 'keep' are:</p><ul>
-<li><p>"long"keep data from scanner with most data (default)</p></li>
-<li><p>"ousAvanto"keep 'ousAvanto'</p></li>
-<li><p>"ousSkyra"keep 'ousSkyra'</p></li>
-<li><p>"ousPrisma"'ousPrisma'</p></li>
-</ul>
-
-<p>Available options for 'tie' are:</p><ul>
-<li><p>"interval"keep data from scanner with longest data interval (default)</p></li>
-<li><p>"ousAvanto"keep 'ousAvanto'</p></li>
-<li><p>"ousSkyra"keep 'ousSkyra'</p></li>
-<li><p>"ousPrisma"'ousPrisma'</p></li>
-</ul>
-
-
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='fu'><a href='filter_site.html'>filter_site</a></span>(<span class='no'>MOAS</span>)
-<span class='fu'><a href='filter_site.html'>filter_site</a></span>(<span class='no'>MOAS</span>, <span class='st'>'ousSkyra'</span>)
-<span class='fu'><a href='filter_site.html'>filter_site</a></span>(<span class='no'>MOAS</span>, <span class='st'>'ousAvanto'</span>)
-}</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#value">Value</a></li>
-      <li><a href="#details">Details</a></li>
-      <li><a href="#examples">Examples</a></li>
     </ul>
 
   </div>

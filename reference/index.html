@@ -111,6 +111,9 @@
       <a href="../articles/find-subject-timepoint.html">Find subject timepoint</a>
     </li>
     <li>
+      <a href="../articles/ggplot-branding.html">Branding ggplots</a>
+    </li>
+    <li>
       <a href="../articles/make_documentation.html">Make documentation pages</a>
     </li>
   </ul>
@@ -172,6 +175,12 @@
       </tr><tr>
         
         <td>
+          <p><code><a href="add_lcbc_logo.html">add_lcbc_logo()</a></code> </p>
+        </td>
+        <td><p>Add LCBC logo to plot</p></td>
+      </tr><tr>
+        
+        <td>
           <p><code><a href="anonymize_moas.html">anonymize_moas()</a></code> </p>
         </td>
         <td><p>Anonymise the MOAS</p></td>
@@ -188,12 +197,6 @@
         </td>
         <td><p>Calculates ages based on birthdates and test/MRI dates, and
 calculated subject timepoints etc.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="calc_hour.html">calc_hour()</a></code> </p>
-        </td>
-        <td><p>Calculates time in decimal hours from HH:MM format.</p></td>
       </tr><tr>
         
         <td>
@@ -269,12 +272,6 @@ calculated subject timepoints etc.</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="factor_times.html">factor_times()</a></code> </p>
-        </td>
-        <td><p>Factor time of day</p></td>
-      </tr><tr>
-        
-        <td>
           <p><code><a href="filter_site.html">filter_site()</a></code> </p>
         </td>
         <td><p>Utility function for reducing double/triple scans to a single row</p></td>
@@ -330,12 +327,6 @@ mixed models</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="is_hms.html">is_hms()</a></code> </p>
-        </td>
-        <td><p>Utility function to locate hms columns</p></td>
-      </tr><tr>
-        
-        <td>
           <p><code><a href="launch_LCBCshiny.html">launch_LCBCshiny()</a></code> </p>
         </td>
         <td><p>Function to launch the LCBC shiny data explorer</p></td>
@@ -345,6 +336,24 @@ mixed models</p></td>
           <p><code><a href="launch_check_tp.html">launch_check_tp()</a></code> </p>
         </td>
         <td><p>Launch shiny app to find subject timepoint</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="lcbc_cols.html">lcbc_cols()</a></code> </p>
+        </td>
+        <td><p>Function to extract lcbc colors as hex codes</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="lcbc_logo_grob.html">lcbc_logo_grob()</a></code> </p>
+        </td>
+        <td><p>LCBC logo graphics object</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="lcbc_pal.html">lcbc_pal()</a></code> </p>
+        </td>
+        <td><p>Return function to interpolate a lcbc color palette</p></td>
       </tr><tr>
         
         <td>
@@ -415,6 +424,54 @@ data collected</p></td>
       </tr><tr>
         
         <td>
+          <p><code><a href="project_cols.html">project_cols()</a></code> </p>
+        </td>
+        <td><p>Function to extract project colors as hex codes</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="project_pal.html">project_pal()</a></code> </p>
+        </td>
+        <td><p>Return function to interpolate a project color palette</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="scale_color_lcbc.html">scale_color_lcbc()</a></code> </p>
+        </td>
+        <td><p>Color scale constructor for lcbc colors</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="scale_color_proj.html">scale_color_proj()</a></code> </p>
+        </td>
+        <td><p>Color scale constructor for proj colors</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="scale_colour_lcbc.html">scale_colour_lcbc()</a></code> </p>
+        </td>
+        <td><p>Colour scale constructor for lcbc colors</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="scale_colour_proj.html">scale_colour_proj()</a></code> </p>
+        </td>
+        <td><p>Colour scale constructor for proj colors</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="scale_fill_lcbc.html">scale_fill_lcbc()</a></code> </p>
+        </td>
+        <td><p>Fill scale constructor for lcbc colors</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="scale_fill_proj.html">scale_fill_proj()</a></code> </p>
+        </td>
+        <td><p>Fill scale constructor for proj colors</p></td>
+      </tr><tr>
+        
+        <td>
           <p><code><a href="select_sensitive.html">select_sensitive()</a></code> </p>
         </td>
         <td><p>Select sensitive columns</p></td>
@@ -424,6 +481,42 @@ data collected</p></td>
           <p><code><a href="site_keeper.html">site_keeper()</a></code> </p>
         </td>
         <td><p>Deprecated, use filter_site</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="theme_lcbc.html">theme_lcbc()</a></code> </p>
+        </td>
+        <td><p>ggplot theme for lcbc</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="theme_lcbc_dark.html">theme_lcbc_dark()</a></code> </p>
+        </td>
+        <td><p>ggplot dark theme for lcbc</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="theme_lcbc_dark_minimal.html">theme_lcbc_dark_minimal()</a></code> </p>
+        </td>
+        <td><p>ggplot minimal theme for lcbc</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="theme_lcbc_dark_void.html">theme_lcbc_dark_void()</a></code> </p>
+        </td>
+        <td><p>ggplot minimal theme for lcbc</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="theme_lcbc_minimal.html">theme_lcbc_minimal()</a></code> </p>
+        </td>
+        <td><p>ggplot minimal theme for lcbc</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="theme_lcbc_void.html">theme_lcbc_void()</a></code> </p>
+        </td>
+        <td><p>ggplot minimal theme for lcbc</p></td>
       </tr><tr>
         
         <td>
