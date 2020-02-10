@@ -114,39 +114,38 @@
 
     
     
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(MOAS)</a></code></pre></div>
 <p>In the event of needing plots that have LCBC branding for presentations, reports etc. we have custom ggplot2 themes and colour scales to ensure that we have consistent branding. These are particularly suitable when using the rmarkdown-templates that also accompany this package.</p>
 <div id="applying-the-lcbc-themes-to-ggplot" class="section level2">
 <h2 class="hasAnchor">
 <a href="#applying-the-lcbc-themes-to-ggplot" class="anchor"></a>Applying the LCBC themes to ggplot</h2>
 <p>The themes are quite minimal, applying mostly just the corrent font and colours to match out branding.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(ggplot2)</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(dplyr)</a>
-<a class="sourceLine" id="cb2-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb2-4" data-line-number="4">p &lt;-<span class="st"> </span>mtcars <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">x =</span> wt, <span class="dt">y =</span> disp, <span class="dt">colour =</span> cyl)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(<span class="dt">title =</span> <span class="st">"LCBC themes"</span>, </a>
-<a class="sourceLine" id="cb2-8" data-line-number="8">       <span class="dt">subtitle =</span> <span class="st">"of various kinds"</span>)</a>
-<a class="sourceLine" id="cb2-9" data-line-number="9"></a>
-<a class="sourceLine" id="cb2-10" data-line-number="10">p <span class="op">+</span></a>
-<a class="sourceLine" id="cb2-11" data-line-number="11"><span class="st">  </span><span class="kw"><a href="../reference/theme_lcbc.html">theme_lcbc</a></span>()</a></code></pre></div>
-<p><img src="ggplot-branding_files/figure-html/unnamed-chunk-2-1.png" width="700"></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(ggplot2)</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(dplyr)</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">p &lt;-<span class="st"> </span>mtcars <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">x =</span> wt, <span class="dt">y =</span> disp, <span class="dt">colour =</span> cyl)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(<span class="dt">title =</span> <span class="st">"LCBC themes"</span>, </a>
+<a class="sourceLine" id="cb1-8" data-line-number="8">       <span class="dt">subtitle =</span> <span class="st">"of various kinds"</span>)</a>
+<a class="sourceLine" id="cb1-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb1-10" data-line-number="10">p <span class="op">+</span></a>
+<a class="sourceLine" id="cb1-11" data-line-number="11"><span class="st">  </span><span class="kw"><a href="../reference/theme_lcbc.html">theme_lcbc</a></span>()</a></code></pre></div>
+<p><img src="ggplot-branding_files/figure-html/unnamed-chunk-2-1.png" width="100%"></p>
 <p>There are variations around the main theme, to adapt to various possible scenarios and tastes, while maintaing a certain aesthetic</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">p <span class="op">+</span><span class="st"> </span><span class="kw"><a href="../reference/theme_lcbc_minimal.html">theme_lcbc_minimal</a></span>()</a></code></pre></div>
-<p><img src="ggplot-branding_files/figure-html/unnamed-chunk-3-1.png" width="700"></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">p <span class="op">+</span><span class="st"> </span><span class="kw"><a href="../reference/theme_lcbc_grid.html">theme_lcbc_grid</a></span>()</a></code></pre></div>
+<p><img src="ggplot-branding_files/figure-html/unnamed-chunk-3-1.png" width="100%"></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"></a>
+<a class="sourceLine" id="cb3-2" data-line-number="2">p <span class="op">+</span><span class="st"> </span><span class="kw"><a href="../reference/theme_lcbc_dark.html">theme_lcbc_dark</a></span>()</a></code></pre></div>
+<p><img src="ggplot-branding_files/figure-html/unnamed-chunk-3-2.png" width="100%"></p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"></a>
-<a class="sourceLine" id="cb4-2" data-line-number="2">p <span class="op">+</span><span class="st"> </span><span class="kw"><a href="../reference/theme_lcbc_dark.html">theme_lcbc_dark</a></span>()</a></code></pre></div>
-<p><img src="ggplot-branding_files/figure-html/unnamed-chunk-3-2.png" width="700"></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"></a>
-<a class="sourceLine" id="cb5-2" data-line-number="2">p <span class="op">+</span><span class="st"> </span><span class="kw"><a href="../reference/theme_lcbc_void.html">theme_lcbc_void</a></span>()</a></code></pre></div>
-<p><img src="ggplot-branding_files/figure-html/unnamed-chunk-3-3.png" width="700"></p>
+<a class="sourceLine" id="cb4-2" data-line-number="2">p <span class="op">+</span><span class="st"> </span><span class="kw"><a href="../reference/theme_lcbc_void.html">theme_lcbc_void</a></span>()</a></code></pre></div>
+<p><img src="ggplot-branding_files/figure-html/unnamed-chunk-3-3.png" width="100%"></p>
 <p>and there are also some pre-defined combinations of the above also.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">p <span class="op">+</span><span class="st"> </span><span class="kw"><a href="../reference/theme_lcbc_dark_minimal.html">theme_lcbc_dark_minimal</a></span>()</a></code></pre></div>
-<p><img src="ggplot-branding_files/figure-html/unnamed-chunk-4-1.png" width="700"></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"></a>
-<a class="sourceLine" id="cb7-2" data-line-number="2">p <span class="op">+</span><span class="st"> </span><span class="kw"><a href="../reference/theme_lcbc_dark_void.html">theme_lcbc_dark_void</a></span>()</a></code></pre></div>
-<p><img src="ggplot-branding_files/figure-html/unnamed-chunk-4-2.png" width="700"></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">p <span class="op">+</span><span class="st"> </span><span class="kw"><a href="../reference/theme_lcbc_dark_grid.html">theme_lcbc_dark_grid</a></span>()</a></code></pre></div>
+<p><img src="ggplot-branding_files/figure-html/unnamed-chunk-4-1.png" width="100%"></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"></a>
+<a class="sourceLine" id="cb6-2" data-line-number="2">p <span class="op">+</span><span class="st"> </span><span class="kw"><a href="../reference/theme_lcbc_dark_void.html">theme_lcbc_dark_void</a></span>()</a></code></pre></div>
+<p><img src="ggplot-branding_files/figure-html/unnamed-chunk-4-2.png" width="100%"></p>
 </div>
 <div id="colour-scales" class="section level2">
 <h2 class="hasAnchor">
@@ -155,68 +154,108 @@
 <h3 class="hasAnchor">
 <a href="#lcbc-scales" class="anchor"></a>LCBC scales</h3>
 <p>The colour scales work much the same way as standard ggplot scales do. The main difference is you need to be aware if the data your are colouring is discrete (categorical) or continuous, to turn on or off the <code>discrete</code> argument.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">p <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="../reference/theme_lcbc.html">theme_lcbc</a></span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="../reference/scale_colour_lcbc.html">scale_colour_lcbc</a></span>(<span class="dt">discrete =</span> <span class="ot">FALSE</span>) </a></code></pre></div>
-<p><img src="ggplot-branding_files/figure-html/unnamed-chunk-5-1.png" width="700"></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"></a>
-<a class="sourceLine" id="cb9-2" data-line-number="2">mtcars <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb9-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">x =</span> wt, <span class="dt">y =</span> disp, <span class="dt">colour =</span> <span class="kw"><a href="https://rdrr.io/r/base/factor.html">factor</a></span>(cyl))) <span class="op">+</span></a>
-<a class="sourceLine" id="cb9-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(<span class="dt">title =</span> <span class="st">"LCBC themes"</span>, </a>
-<a class="sourceLine" id="cb9-6" data-line-number="6">       <span class="dt">subtitle =</span> <span class="st">"of various kinds"</span>) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb9-7" data-line-number="7"><span class="st">  </span><span class="kw"><a href="../reference/theme_lcbc.html">theme_lcbc</a></span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb9-8" data-line-number="8"><span class="st">  </span><span class="kw"><a href="../reference/scale_colour_lcbc.html">scale_colour_lcbc</a></span>(<span class="dt">discrete =</span> <span class="ot">TRUE</span>) </a></code></pre></div>
-<p><img src="ggplot-branding_files/figure-html/unnamed-chunk-5-2.png" width="700"></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">p <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="../reference/theme_lcbc.html">theme_lcbc</a></span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="../reference/scale_colour_lcbc.html">scale_colour_lcbc</a></span>(<span class="dt">discrete =</span> <span class="ot">FALSE</span>) </a></code></pre></div>
+<p><img src="ggplot-branding_files/figure-html/unnamed-chunk-5-1.png" width="100%"></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"></a>
+<a class="sourceLine" id="cb8-2" data-line-number="2">mtcars <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">x =</span> wt, <span class="dt">y =</span> disp, <span class="dt">colour =</span> <span class="kw"><a href="https://rdrr.io/r/base/factor.html">factor</a></span>(cyl))) <span class="op">+</span></a>
+<a class="sourceLine" id="cb8-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb8-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(<span class="dt">title =</span> <span class="st">"LCBC themes"</span>, </a>
+<a class="sourceLine" id="cb8-6" data-line-number="6">       <span class="dt">subtitle =</span> <span class="st">"of various kinds"</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb8-7" data-line-number="7"><span class="st">  </span><span class="kw"><a href="../reference/theme_lcbc.html">theme_lcbc</a></span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb8-8" data-line-number="8"><span class="st">  </span><span class="kw"><a href="../reference/scale_colour_lcbc.html">scale_colour_lcbc</a></span>(<span class="dt">discrete =</span> <span class="ot">TRUE</span>) </a></code></pre></div>
+<p><img src="ggplot-branding_files/figure-html/unnamed-chunk-5-2.png" width="100%"></p>
 <p>By default, the scales grab the “main” palette, which consists of the blue and green colours of our logo. There are also other variations</p>
-<p><img src="ggplot-branding_files/figure-html/unnamed-chunk-6-1.png" width="700"></p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1">p <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb10-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="../reference/theme_lcbc.html">theme_lcbc</a></span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb10-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="../reference/scale_colour_lcbc.html">scale_colour_lcbc</a></span>(<span class="st">"dark"</span>, <span class="dt">discrete =</span> <span class="ot">FALSE</span>) </a></code></pre></div>
-<p><img src="ggplot-branding_files/figure-html/unnamed-chunk-7-1.png" width="700"></p>
+<p><img src="ggplot-branding_files/figure-html/unnamed-chunk-6-1.png" width="100%"></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">p <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="../reference/theme_lcbc.html">theme_lcbc</a></span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb9-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="../reference/scale_colour_lcbc.html">scale_colour_lcbc</a></span>(<span class="st">"dark"</span>, <span class="dt">discrete =</span> <span class="ot">FALSE</span>) </a></code></pre></div>
+<p><img src="ggplot-branding_files/figure-html/unnamed-chunk-7-1.png" width="100%"></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"></a>
+<a class="sourceLine" id="cb10-2" data-line-number="2">p <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb10-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="../reference/theme_lcbc_dark.html">theme_lcbc_dark</a></span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb10-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="../reference/scale_colour_lcbc.html">scale_colour_lcbc</a></span>(<span class="st">"light"</span>, <span class="dt">discrete =</span> <span class="ot">FALSE</span>) </a></code></pre></div>
+<p><img src="ggplot-branding_files/figure-html/unnamed-chunk-7-2.png" width="100%"></p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"></a>
 <a class="sourceLine" id="cb11-2" data-line-number="2">p <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb11-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="../reference/theme_lcbc_dark.html">theme_lcbc_dark</a></span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb11-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="../reference/scale_colour_lcbc.html">scale_colour_lcbc</a></span>(<span class="st">"light"</span>, <span class="dt">discrete =</span> <span class="ot">FALSE</span>) </a></code></pre></div>
-<p><img src="ggplot-branding_files/figure-html/unnamed-chunk-7-2.png" width="700"></p>
+<a class="sourceLine" id="cb11-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="../reference/theme_lcbc.html">theme_lcbc</a></span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb11-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="../reference/scale_colour_lcbc.html">scale_colour_lcbc</a></span>(<span class="st">"blue"</span>, <span class="dt">discrete =</span> <span class="ot">FALSE</span>) </a></code></pre></div>
+<p><img src="ggplot-branding_files/figure-html/unnamed-chunk-7-3.png" width="100%"></p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"></a>
 <a class="sourceLine" id="cb12-2" data-line-number="2">p <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb12-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="../reference/theme_lcbc.html">theme_lcbc</a></span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb12-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="../reference/scale_colour_lcbc.html">scale_colour_lcbc</a></span>(<span class="st">"blue"</span>, <span class="dt">discrete =</span> <span class="ot">FALSE</span>) </a></code></pre></div>
-<p><img src="ggplot-branding_files/figure-html/unnamed-chunk-7-3.png" width="700"></p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"></a>
-<a class="sourceLine" id="cb13-2" data-line-number="2">p <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb13-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="../reference/theme_lcbc.html">theme_lcbc</a></span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb13-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="../reference/scale_colour_lcbc.html">scale_colour_lcbc</a></span>(<span class="st">"green"</span>, <span class="dt">discrete =</span> <span class="ot">FALSE</span>) </a></code></pre></div>
-<p><img src="ggplot-branding_files/figure-html/unnamed-chunk-7-4.png" width="700"></p>
+<a class="sourceLine" id="cb12-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="../reference/scale_colour_lcbc.html">scale_colour_lcbc</a></span>(<span class="st">"green"</span>, <span class="dt">discrete =</span> <span class="ot">FALSE</span>) </a></code></pre></div>
+<p><img src="ggplot-branding_files/figure-html/unnamed-chunk-7-4.png" width="100%"></p>
 </div>
 </div>
 <div id="adding-logo-to-plots" class="section level2">
 <h2 class="hasAnchor">
 <a href="#adding-logo-to-plots" class="anchor"></a>Adding logo to plots</h2>
 <p>Adding the LCBC logo to plots is a great way to brand images further, though should be used carefully, so it’s not too garish.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1"> mtcars <span class="op">%&gt;%</span><span class="st"> </span></a>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"> mtcars <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb13-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">x =</span> wt, <span class="dt">y =</span> disp, <span class="dt">colour =</span> cyl))<span class="op">+</span></a>
+<a class="sourceLine" id="cb13-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb13-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(<span class="dt">title =</span> <span class="st">"LCBC themes"</span>, </a>
+<a class="sourceLine" id="cb13-5" data-line-number="5">       <span class="dt">subtitle =</span> <span class="st">"of various kinds"</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb13-6" data-line-number="6"><span class="st">  </span><span class="kw"><a href="../reference/scale_colour_lcbc.html">scale_colour_lcbc</a></span>(<span class="dt">discrete =</span> <span class="ot">FALSE</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb13-7" data-line-number="7"><span class="st">  </span><span class="kw"><a href="../reference/theme_lcbc.html">theme_lcbc</a></span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb13-8" data-line-number="8"><span class="st">  </span><span class="kw"><a href="../reference/add_lcbc_logo.html">add_lcbc_logo</a></span>(<span class="st">"long"</span>, <span class="dt">alpha=</span>.<span class="dv">5</span>) </a></code></pre></div>
+<p><img src="ggplot-branding_files/figure-html/unnamed-chunk-8-1.png" width="100%"></p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1">mtcars <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb14-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">x =</span> wt, <span class="dt">y =</span> disp, <span class="dt">colour =</span> cyl)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb14-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="../reference/add_lcbc_logo.html">add_lcbc_logo</a></span>(<span class="st">"long"</span>, <span class="dt">alpha=</span>.<span class="dv">5</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb14-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb14-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(<span class="dt">title =</span> <span class="st">"LCBC themes"</span>, </a>
-<a class="sourceLine" id="cb14-6" data-line-number="6">       <span class="dt">subtitle =</span> <span class="st">"of various kinds"</span>) </a></code></pre></div>
-<p><img src="ggplot-branding_files/figure-html/unnamed-chunk-8-1.png" width="700"></p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1"> mtcars <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb15-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">x =</span> wt, <span class="dt">y =</span> disp, <span class="dt">colour =</span> cyl)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb15-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="../reference/add_lcbc_logo.html">add_lcbc_logo</a></span>(<span class="dt">alpha=</span>.<span class="dv">7</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb15-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb15-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(<span class="dt">title =</span> <span class="st">"LCBC themes"</span>, </a>
-<a class="sourceLine" id="cb15-6" data-line-number="6">       <span class="dt">subtitle =</span> <span class="st">"of various kinds"</span>) </a></code></pre></div>
-<p><img src="ggplot-branding_files/figure-html/unnamed-chunk-9-1.png" width="700"></p>
+<a class="sourceLine" id="cb14-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb14-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(<span class="dt">title =</span> <span class="st">"LCBC themes"</span>, </a>
+<a class="sourceLine" id="cb14-5" data-line-number="5">       <span class="dt">subtitle =</span> <span class="st">"of various kinds"</span>)  <span class="op">+</span></a>
+<a class="sourceLine" id="cb14-6" data-line-number="6"><span class="st">  </span><span class="kw"><a href="../reference/scale_colour_lcbc.html">scale_colour_lcbc</a></span>(<span class="dt">discrete =</span> <span class="ot">FALSE</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb14-7" data-line-number="7"><span class="st">  </span><span class="kw"><a href="../reference/theme_lcbc.html">theme_lcbc</a></span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb14-8" data-line-number="8"><span class="st">  </span><span class="kw"><a href="../reference/add_lcbc_logo.html">add_lcbc_logo</a></span>(<span class="dt">alpha=</span>.<span class="dv">7</span>) </a></code></pre></div>
+<p><img src="ggplot-branding_files/figure-html/unnamed-chunk-9-1.png" width="100%"></p>
 <p>You can control the size and position of the logos by using the <code>xmin</code>, <code>xmax</code>, <code>ymin</code>, <code>ymax</code> parameters, defining where on the plot it is placed.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1"> mtcars <span class="op">%&gt;%</span><span class="st"> </span></a>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1">mtcars <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb15-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">x =</span> wt, <span class="dt">y =</span> disp, <span class="dt">colour =</span> cyl)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb15-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb15-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(<span class="dt">title =</span> <span class="st">"LCBC themes"</span>, </a>
+<a class="sourceLine" id="cb15-5" data-line-number="5">       <span class="dt">subtitle =</span> <span class="st">"of various kinds"</span>)  <span class="op">+</span></a>
+<a class="sourceLine" id="cb15-6" data-line-number="6"><span class="st">  </span><span class="kw"><a href="../reference/scale_colour_lcbc.html">scale_colour_lcbc</a></span>(<span class="dt">discrete =</span> <span class="ot">FALSE</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb15-7" data-line-number="7"><span class="st">  </span><span class="kw"><a href="../reference/theme_lcbc.html">theme_lcbc</a></span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb15-8" data-line-number="8"><span class="st">  </span><span class="kw"><a href="../reference/add_lcbc_logo.html">add_lcbc_logo</a></span>(<span class="dt">alpha =</span> <span class="fl">.7</span>, </a>
+<a class="sourceLine" id="cb15-9" data-line-number="9">                <span class="dt">xmin =</span> <span class="fl">4.5</span>, <span class="dt">xmax =</span> <span class="ot">Inf</span>,</a>
+<a class="sourceLine" id="cb15-10" data-line-number="10">                <span class="dt">ymin =</span> <span class="dv">60</span> , <span class="dt">ymax =</span> <span class="dv">100</span></a>
+<a class="sourceLine" id="cb15-11" data-line-number="11">  ) </a></code></pre></div>
+<p><img src="ggplot-branding_files/figure-html/unnamed-chunk-10-1.png" width="100%"></p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1">mtcars <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb16-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">x =</span> wt, <span class="dt">y =</span> disp, <span class="dt">colour =</span> cyl)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb16-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="../reference/add_lcbc_logo.html">add_lcbc_logo</a></span>(<span class="dt">alpha =</span> <span class="fl">.7</span>, <span class="dt">xmin =</span> <span class="dv">70</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb16-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb16-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(<span class="dt">title =</span> <span class="st">"LCBC themes"</span>, </a>
-<a class="sourceLine" id="cb16-6" data-line-number="6">       <span class="dt">subtitle =</span> <span class="st">"of various kinds"</span>) </a></code></pre></div>
-<p><img src="ggplot-branding_files/figure-html/unnamed-chunk-10-1.png" width="700"></p>
+<a class="sourceLine" id="cb16-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb16-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(<span class="dt">title =</span> <span class="st">"LCBC themes"</span>, </a>
+<a class="sourceLine" id="cb16-5" data-line-number="5">       <span class="dt">subtitle =</span> <span class="st">"of various kinds"</span>)  <span class="op">+</span></a>
+<a class="sourceLine" id="cb16-6" data-line-number="6"><span class="st">  </span><span class="kw"><a href="../reference/scale_colour_lcbc.html">scale_colour_lcbc</a></span>(<span class="dt">discrete =</span> <span class="ot">FALSE</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb16-7" data-line-number="7"><span class="st">  </span><span class="kw"><a href="../reference/theme_lcbc.html">theme_lcbc</a></span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb16-8" data-line-number="8"><span class="st">  </span><span class="kw"><a href="../reference/add_lcbc_logo.html">add_lcbc_logo</a></span>(<span class="dt">type =</span> <span class="st">"brain"</span>,</a>
+<a class="sourceLine" id="cb16-9" data-line-number="9">                <span class="dt">alpha =</span> <span class="fl">.7</span>, </a>
+<a class="sourceLine" id="cb16-10" data-line-number="10">                <span class="dt">xmin =</span> <span class="dv">5</span>, <span class="dt">xmax =</span> <span class="ot">Inf</span>,</a>
+<a class="sourceLine" id="cb16-11" data-line-number="11">                <span class="dt">ymin =</span> <span class="dv">60</span> , <span class="dt">ymax =</span> <span class="dv">110</span></a>
+<a class="sourceLine" id="cb16-12" data-line-number="12">  ) </a></code></pre></div>
+<p><img src="ggplot-branding_files/figure-html/unnamed-chunk-11-1.png" width="100%"></p>
+<p>You can also add the logo outside the plot area, but that requires extra work, as ggplot automatically cuts away all datapoints that dont fit in the main plot area.</p>
+<p>To coordinates can be found with some trial and error, here we want to place the logo at the bottom right. The plot y-axis starts at <code>50</code>, and the x-axis ends at <code>5.5</code>. SO here we specify that the logo should be placed below the y-axis and to the right of the x-axis, extending the main plot area beyong the data.</p>
+<p>To keep whatever we place there, we need to tell ggplot to <em>not</em> <code>clip</code> anything outside the main plot out, turning clipping off with <code>coord_cartesian</code>.</p>
+<p>After this, we need to tell ggplot to extend the plot to include the area we placed the logo. This is trial and error, changing the numbers in <code>units</code> changes how much the plot is extended to each of it’s four sides. <code>1</code> is no extention, and any number above or below that will increase or reduce the plotting area, respectively.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1">mtcars <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb17-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">x =</span> wt, <span class="dt">y =</span> disp, <span class="dt">colour =</span> cyl)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb17-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb17-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(<span class="dt">title =</span> <span class="st">"LCBC themes"</span>, </a>
+<a class="sourceLine" id="cb17-5" data-line-number="5">       <span class="dt">subtitle =</span> <span class="st">"of various kinds"</span>)  <span class="op">+</span></a>
+<a class="sourceLine" id="cb17-6" data-line-number="6"><span class="st">  </span><span class="kw"><a href="../reference/scale_colour_lcbc.html">scale_colour_lcbc</a></span>(<span class="dt">discrete =</span> <span class="ot">FALSE</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb17-7" data-line-number="7"><span class="st">  </span><span class="kw"><a href="../reference/theme_lcbc.html">theme_lcbc</a></span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb17-8" data-line-number="8"><span class="st">  </span><span class="kw"><a href="../reference/add_lcbc_logo.html">add_lcbc_logo</a></span>(<span class="dt">alpha =</span> <span class="dv">1</span>, </a>
+<a class="sourceLine" id="cb17-9" data-line-number="9">                <span class="dt">xmin =</span> <span class="fl">4.7</span>, <span class="dt">xmax =</span> <span class="fl">6.7</span>,</a>
+<a class="sourceLine" id="cb17-10" data-line-number="10">                <span class="dt">ymin =</span> <span class="dv">-10</span> , <span class="dt">ymax =</span> <span class="dv">30</span></a>
+<a class="sourceLine" id="cb17-11" data-line-number="11">  ) <span class="op">+</span></a>
+<a class="sourceLine" id="cb17-12" data-line-number="12"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/coord_cartesian.html">coord_cartesian</a></span>(<span class="dt">clip =</span> <span class="st">"off"</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb17-13" data-line-number="13"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span>(<span class="dt">plot.margin =</span> <span class="kw"><a href="https://ggplot2.tidyverse.org/reference/reexports.html">unit</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>), <span class="st">"lines"</span>))</a></code></pre></div>
+<p><img src="ggplot-branding_files/figure-html/unnamed-chunk-12-1.png" width="100%"></p>
 </div>
   </div>
 
