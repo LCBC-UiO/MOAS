@@ -107,7 +107,7 @@
       <h1>Find subject timepoint</h1>
                         <h4 class="author">Athanasia Monika Mowinckel</h4>
             
-            <h4 class="date">2020-02-10</h4>
+            <h4 class="date">2020-03-17</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/LCBC-UiO/MOAS/blob/master/vignettes/find-subject-timepoint.Rmd"><code>vignettes/find-subject-timepoint.Rmd</code></a></small>
       <div class="hidden name"><code>find-subject-timepoint.Rmd</code></div>
@@ -116,7 +116,7 @@
 
     
     
-<p>Data that comes from the MRI needs to be tagged with the subject timepoint. This is currently (as of 2020-02-10) the only data that is tagged with subject timepoint. The reason for the need of subject timepoint for this data is the Brain Imaging Data Structure (BIDS) that the MRI data are placed into, which requires this information. To ease the work of the MRI engineer, we add this information to the exported files from MRI, when we create dummy names. The information with the 7-digit ID, and the 2-digit timepoint should be clearly visible in the calendar, so that this information is easily available at scan. <strong>Note</strong>: the timepoint information is <em>only</em> needed in the exported files, not anywhere else.</p>
+<p>Data that comes from the MRI needs to be tagged with the subject timepoint. This is currently (as of 2020-03-17) the only data that is tagged with subject timepoint. The reason for the need of subject timepoint for this data is the Brain Imaging Data Structure (BIDS) that the MRI data are placed into, which requires this information. To ease the work of the MRI engineer, we add this information to the exported files from MRI, when we create dummy names. The information with the 7-digit ID, and the 2-digit timepoint should be clearly visible in the calendar, so that this information is easily available at scan. <strong>Note</strong>: the timepoint information is <em>only</em> needed in the exported files, not anywhere else.</p>
 <p>To make it easier for the RAs to find this information, there are two alternatives using R-functions that come with the MOAS R-package.</p>
 <div id="setup" class="section level2">
 <h2 class="hasAnchor">
@@ -136,12 +136,12 @@
 <a href="#install-necessary-packages" class="anchor"></a>Install necessary packages</h3>
 <p>Open RStudio and in the <code>RStudio console</code> (bottom left of the RStudio program), do the following:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"devtools"</span>)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2">devtools<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/devtools/man/remote-reexports.html">install_github</a></span>(<span class="st">"LCBC-UiO/MOAS"</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb1-2" data-line-number="2">devtools<span class="op">::</span><span class="kw"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="st">"LCBC-UiO/MOAS"</span>)</a></code></pre></div>
 <p>If the last command outputs a numbered list asking you to choose which packages to update, type in the number for the <strong>“None”</strong> option. You may also choose <strong>“All”</strong> but this might take some time, depending on the number of packages it wants to update. If it additionally asks you <code>Do you want to install from sources the package which needs compilation?</code>, always type <code>n</code>, for no.</p>
 <p>No matter which option you choose, the installation of the MOAS-packages takes some time, because it needs many other packages to work.</p>
 <p><strong>Warning:</strong> we know there is an issue with installing this package on the UiO office PCs. If the installation is failing, please follow <a href="https://github.com/LCBC-UiO/Mini-Workshops/wiki/Analysis:-R">this troubleshoot</a>, and see if that fixed your problem.</p>
 <p>After this, try installing again:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">remotes<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/remotes/man/install_github.html">install_github</a></span>(<span class="st">"LCBC-UiO/MOAS"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">remotes<span class="op">::</span><span class="kw"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"LCBC-UiO/MOAS"</span>)</a></code></pre></div>
 <p>Once everything has been installed sucessfully, your computer will have the necessary setup to run the function to find the subject timepoints. Thankfully, once it is all installed, you don’t have to do these steps again!</p>
 </div>
 </div>
